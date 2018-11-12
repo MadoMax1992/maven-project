@@ -1,15 +1,20 @@
 pipeline {
     agent any
-    stages{
-        stage('Build'){
+
+    stages {
+        stage('Build') {
             steps {
-                bat echo hello
+                echo 'Building..'
             }
-            post {
-                success {
-                    echo 'Now Archiving...'
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
