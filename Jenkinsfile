@@ -4,10 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-			withEnv( ["PATH+MAVEN=${tool localMaven}/bin"] ){
-				bat 'mvn clean package'
-			}
-                
+				bat 'mvn clean package'			           
             }
         }
         stage('Test') {
