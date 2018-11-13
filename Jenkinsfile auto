@@ -27,7 +27,7 @@ pipeline {
         stage ('Deployment'){
           stage ('Deploy'){
                     steps {
-						bat "xcopy /s C:\Program Files (x86)\Jenkins\workspace\pipe\webapp\target/*.war C:\Program Files\Apache Software Foundation\Tomcat 9.0"
+						bat "copy /Y C:\Program Files (x86)\Jenkins\workspace\pipe\webapp\target/*.war C:\Program Files\Apache Software Foundation\Tomcat 9.0"
                     }
                 }
         }
